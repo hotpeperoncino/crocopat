@@ -1,0 +1,2 @@
+Use(x,y) := CALL(x,y) | CONTAINMENT(x,y) | INHERITANCE(x,y);
+Closure(x,y) := TC(Use(x,y));

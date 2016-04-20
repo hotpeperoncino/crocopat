@@ -1,0 +1,55 @@
+digraph BDD {
+size="7.5,10";
+
+{ rank=same;
+1 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x1"];
+}
+
+{ rank=same;
+2 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x2"];
+3 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x2"];
+}
+
+{ rank=same;
+4 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x3"];
+5 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x3"];
+6 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x3"];
+7 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x3"];
+}
+
+
+{ rank=same;
+8 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,shape=box,label="1"];
+9 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,shape=box,label="0"];
+10 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,shape=box,label="0"];
+11 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,shape=box,label="1"];
+12 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,shape=box,label="0"];
+13 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,shape=box,label="0"];
+14 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,shape=box,label="1"];
+15 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,shape=box,label="1"];
+
+}
+
+
+1 -> 2 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="",style=dotted]
+1 -> 3 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="",style=solid]
+
+2 -> 4 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="",style=dotted]
+2 -> 5 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="",style=solid]
+
+3 -> 6 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="",style=dotted]
+3 -> 7 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="",style=solid]
+
+4 -> 8 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="",style=dotted]
+4 -> 9 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="",style=solid]
+
+5 -> 10 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="",style=dotted]
+5 -> 11 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="",style=solid]
+
+6 -> 12 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="",style=dotted]
+6 -> 13 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="",style=solid]
+
+7 -> 14 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="",style=dotted]
+7 -> 15 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="",style=solid]
+
+}

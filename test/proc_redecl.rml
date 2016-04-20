@@ -1,0 +1,3 @@
+PROCEDURE foo { PRINT "Procedure called."; };
+PROCEDURE foo { PRINT "Procedure called."; };
+

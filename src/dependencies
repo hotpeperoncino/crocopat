@@ -1,0 +1,22 @@
+crocopat.o: crocopat.cpp bddBdd.h relObject.h relStatement.h \
+  relPrintExpr.h relExpression.h bddRelation.h bddSymTab.h reprNUMBER.h \
+  relDataType.h relTerm.h relStrExpr.h relString.h relNumExpr.h \
+  relNumber.h relReaderWriter.h
+relYacc.tab.o: relYacc.tab.cpp relStatement.h relPrintExpr.h \
+  relExpression.h bddRelation.h bddBdd.h relObject.h bddSymTab.h \
+  reprNUMBER.h relDataType.h relTerm.h relStrExpr.h relString.h \
+  relNumExpr.h relNumber.h
+relLex.yy.o: relLex.yy.cpp relStatement.h relPrintExpr.h relExpression.h \
+  bddRelation.h bddBdd.h relObject.h bddSymTab.h reprNUMBER.h \
+  relDataType.h relTerm.h relStrExpr.h relString.h relNumExpr.h \
+  relNumber.h relYacc.tab.hpp
+relNumExpr.o: relNumExpr.cpp relNumExpr.h relNumber.h relDataType.h \
+  relObject.h bddSymTab.h reprNUMBER.h relExpression.h bddRelation.h \
+  bddBdd.h relTerm.h relStrExpr.h relString.h
+relStrExpr.o: relStrExpr.cpp relStrExpr.h relString.h relDataType.h \
+  relObject.h relNumExpr.h relNumber.h bddSymTab.h reprNUMBER.h \
+  relExpression.h bddRelation.h bddBdd.h relTerm.h
+relReaderWriter.o: relReaderWriter.cpp relReaderWriter.h relObject.h
+bddBdd.o: bddBdd.cpp bddBdd.h relObject.h
+relObject.o: relObject.cpp relObject.h
+main.o: main.cpp

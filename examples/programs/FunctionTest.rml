@@ -1,0 +1,12 @@
+FUN("1","2");
+FUN("2","3");
+FUN("3","4");
+//FUN("3","3");
+
+isFunction()    := FA(x, y1, y2, (FUN(x,y1) & FUN(x,y2)) -> (y1=y2));
+//isInjective() := FA(x1, x2, y, (FUN(x1,y) & FUN(x2,y)) -> (x1=x2));
+IF (isFunction()) {
+  PRINT "FUN is a function.", ENDL;
+} ELSE {
+  PRINT "FUN is not a function.", ENDL;
+}

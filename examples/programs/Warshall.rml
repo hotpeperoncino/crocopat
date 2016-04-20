@@ -1,0 +1,13 @@
+// Symbolic version of Warshall's algorithm for transitive closure.
+
+Result(x,y) := R(x,y);
+InvResult(x,y) := R(y,x);
+
+Node(x) := R(x,_) & R(_,x);
+
+FOR node IN Node(x) {
+  Result(x,y) := Result(x,y)
+    | (InvResult(node,x) & Result(node,y));
+  InvResult(x,y) := InvResult(x,y)
+    | (Result(node,x) & InvResult(node,y));
+}

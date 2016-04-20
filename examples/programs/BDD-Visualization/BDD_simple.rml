@@ -1,0 +1,18 @@
+// RML program to generate a BDD graph for the formula
+// !x1 & !x2 & !x3  |  x1 & x2  |  x2 & x3,
+// using the variable ordering <x1, x2, x3>.
+// "crocopat -e BDD_simple.rml" generates a file in dot format.
+// "dot -Tsvg BDD_simple.dot -o BDD_Variable_Ordering_Bad.svg"
+// generates a file in SVG format from the file in dot format.
+
+// There are two ('Boolean') values for the variables x1, x2, x3.
+DOM("0");
+DOM("1");
+
+// F is the name of the Boolean formula.
+F(x1,x2,x3) :=  (x1="0" & x2="0" & x3="0") 
+              | (x1="1" & x2="1")
+              | (x2="1" & x3="1");
+
+// Prints the BDD as graph in GraphViz dot format.
+PRINT GRAPH( F(x1,x2,x3) ) TO "BDD_simple.dot";

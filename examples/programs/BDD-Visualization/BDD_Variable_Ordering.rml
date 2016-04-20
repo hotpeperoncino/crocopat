@@ -1,0 +1,29 @@
+// RML program to generate BDD graphs for the formula
+// x1 & x2 | x3 & x4 | x5 & x6 | x7 & x8,
+// using two different variable orderings.
+// "crocopat -e BDD_Variable_Ordering.rml" generates two files in dot format.
+// "dot -Tsvg BDD_Variable_Ordering_Bad.dot -o BDD_Variable_Ordering_Bad.svg"
+// generates a file in SVG format from the file in dot format.
+
+// There are two ('Boolean') values for the variables x1, ..., x8.
+DOM("0");
+DOM("1");
+
+// F is the name of the Boolean formula.
+F(x1,x2,x3,x4,x5,x6,x7,x8) :=  (x1="1" & x2="1") 
+                             | (x3="1" & x4="1")
+                             | (x5="1" & x6="1")
+                             | (x7="1" & x8="1");
+
+// Prints the BDD as graph in GraphViz dot format,
+// using a good variable ordering resulting in linear size of the graph.
+PRINT GRAPH( F(x1,x2,x3,x4,x5,x6,x7,x8) ) 
+      TO "BDD_Variable_Ordering_Good.dot";
+
+// Prints the BDD as graph in GraphViz dot format,
+// using a bad variable ordering resulting in exponential size of the graph.
+// The first term of the conjunction sets the variable ordering.
+PRINT GRAPH( TRUE(x1,x3,x5,x7,x2,x4,x6,x8) &
+             F(x1,x2,x3,x4,x5,x6,x7,x8) ) 
+      TO "BDD_Variable_Ordering_Bad.dot";;
+

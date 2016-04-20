@@ -1,0 +1,4 @@
+PROCEDURE foo { PRINT "Procedure called.", ENDL; };
+foo;
+foo;
+PRINT "Test passed. :-)", ENDL;

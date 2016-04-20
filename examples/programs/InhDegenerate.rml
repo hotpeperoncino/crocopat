@@ -1,0 +1,7 @@
+// Degenerate inheritance.
+
+DegInh(a,b,c) :=  INHERITANCE(c,b)
+                & INHERITANCE(c,a)
+                & TC(INHERITANCE(b,a));
+PRINT DegInh(a,b,c);
+PRINT "Number of degenerate triples: ", #(DegInh(a,b,c)), ENDL TO STDERR;

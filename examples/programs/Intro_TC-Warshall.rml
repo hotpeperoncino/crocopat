@@ -1,0 +1,6 @@
+// Start with 'crocopat Intro_TC-Warshall.rml < Intro_R.rsf'
+Result(x,y) := R(x,y);
+EndNode(y) := EX(x, Result(x,y));
+FOR node IN EndNode(x) {
+  Result(x,y) := Result(x,y) | (Result(x,node) & Result(node,y));
+}

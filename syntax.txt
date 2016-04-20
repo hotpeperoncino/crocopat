@@ -1,0 +1,122 @@
+Grammar: CrocoPat 2.1.4
+
+    1 Start: StmtSeq
+
+    2 StmtSeq: Statement
+    3        | StmtSeq Statement
+
+    4 Statement: t_NUMVAR t_ASSIGN NumExpr ';'
+    5          | t_IDENTIFIER t_ASSIGN NumExpr ';'
+    6          | t_STRVAR t_ASSIGN StrExpr ';'
+    7          | t_IDENTIFIER t_ASSIGN StrExpr ';'
+    8          | t_RELVAR '(' TermListLHS ')' t_ASSIGN Expression ';'
+    9          | t_RELVAR '(' TermListLHS ')' ';'
+   10          | t_IDENTIFIER '(' TermListLHS ')' t_ASSIGN Expression ';'
+   11          | t_IDENTIFIER '(' TermListLHS ')' ';'
+   12          | t_IF Expression '{' StmtSeq '}'
+   13          | t_IF Expression '{' StmtSeq '}' t_ELSE '{' StmtSeq '}'
+   14          | t_WHILE Expression '{' StmtSeq '}'
+   15          | t_FOR StringVar t_IN Expression '{' StmtSeq '}'
+   16          | t_PRINT PrintExprList ';'
+   17          | t_PRINT PrintExprList t_TO t_STDERR ';'
+   18          | t_PRINT PrintExprList t_TO StrExpr ';'
+   19          | t_EXEC StrExpr ';'
+   20          | t_EXIT NumExpr ';'
+   21          | '{' StmtSeq '}'
+   22          | ';'
+   23          | error ';'
+
+   24 StringVar: t_IDENTIFIER
+   25          | t_STRVAR
+
+   26 Expression: t_RELSYM '(' Term ',' Term ')'
+   27           | t_RELSYM '(' NumExpr ',' NumExpr ')'
+   28           | t_RELVAR '(' TermList ')'
+   29           | t_IDENTIFIER '(' TermList ')'
+   30           | Term t_RELSYM Term
+   31           | NumExpr t_RELSYM NumExpr
+   32           | Term t_RELVAR Term
+   33           | Term t_IDENTIFIER Term
+   34           | '!' Expression
+   35           | Expression '&' Expression
+   36           | Expression '|' Expression
+   37           | Expression t_IMPLIES Expression
+   38           | Expression t_EQUIV Expression
+   39           | t_EXISTS '(' TermList ',' Expression ')'
+   40           | t_FORALL '(' TermList ',' Expression ')'
+   41           | t_TC '(' Expression ')'
+   42           | t_TCFAST '(' Expression ')'
+   43           | '@' StrExpr '(' Term ')'
+   44           | '(' Expression ')'
+   45           | Expression t_RELSYM Expression
+   46           | t_TUPLEOF '(' Expression ')'
+
+   47 TermList: /* empty */
+   48         | Term
+   49         | TermList ',' Term
+
+   50 Term: t_IDENTIFIER
+   51     | StrExpr
+   52     | '_'
+
+   53 TermListLHS: /* empty */
+   54            | TermLHS
+   55            | TermListLHS ',' TermLHS
+
+   56 TermLHS: t_IDENTIFIER
+   57        | t_STRINGCONSTANT
+
+   58 StrExpr: t_STRVAR
+   59        | t_STRINGCONSTANT
+   60        | t_ELEMENT '(' Expression ')'
+   61        | t_STRING '(' NumExpr ')'
+   62        | '$' NumExpr
+   63        | StrExpr '+' StrExpr
+   64        | '(' StrExpr ')'
+
+   65 NumExpr: t_NUMBERCONSTANT
+   66        | t_NUMVAR
+   67        | '#' '(' Expression ')'
+   68        | t_MIN '(' Expression ')'
+   69        | t_MAX '(' Expression ')'
+   70        | t_SUM '(' Expression ')'
+   71        | t_AVG '(' Expression ')'
+   72        | '-' NumExpr
+   73        | NumExpr '+' NumExpr
+   74        | NumExpr '-' NumExpr
+   75        | NumExpr '*' NumExpr
+   76        | NumExpr '/' NumExpr
+   77        | NumExpr t_DIV NumExpr
+   78        | NumExpr t_MOD NumExpr
+   79        | NumExpr '^' NumExpr
+   80        | t_ROUND '(' NumExpr ')'
+   81        | t_NUMBER '(' StrExpr ')'
+   82        | t_ELAPSED
+   83        | '(' NumExpr ')'
+
+   84 PrintExprList: PrintExpr
+   85              | PrintExprList ',' PrintExpr
+
+   86 PrintExpr: NumExpr
+   87          | StrExpr
+   88          | Expression
+   89          | '[' StrExpr ']' Expression
+   90          | t_ENDL
+   91          | t_RELINFO '(' Expression ')'
+   92          | t_NODESPERVAR '(' Expression ')'
+   93          | t_GRAPH '(' Expression ')'
+   94          | t_BDT '(' Expression ')'
+		
+
+t_RELSYM:         = | != | < | <= | > | >= 
+
+t_IDENTIFIER:     [a-zA-Z_][a-zA-Z_0-9]*
+                | \'.*\'
+t_NUMBERCONSTANT: {digits}{exponentpart}?
+                | {digits}\.{digits}?{exponentpart}?
+                | \.{digits}{exponentpart}?
+
+digits:           [0-9]+
+exponentpart:     [Ee][\+\-]?[0-9]+
+
+t_xyz:            'xyz'

@@ -1,0 +1,76 @@
+// Computing cycles of length 2 to 5.
+
+// Construct relation (x1, x2, x3, x4, x5) with
+//   (x, yi) in (X, Y)^i.
+
+// 1. Build pathes of length 2 to 5.
+// 2. Intersect with closing edges.
+// 4. Eliminate some edges of smaller cycles.
+
+Less(x,y) := (x < y);
+
+Rel(x,y)   := CALL(x,y) | CONTAINMENT(x,y) | INHERITANCE(x,y);
+PRINT "Preparation finished.", ENDL TO STDERR;
+
+// Cycles of length 2.
+  Reln(x1,x2) := Rel(x1,x2)  &  Rel(x2,x1);
+
+  // Eliminating edges of Cycles (not from inheritance relation).
+  Rel(x1,x2) :=   Rel(x1,x2)
+	        & (! Reln(x1,x2) )
+                | INHERITANCE(x1,x2);
+             
+  Reln(x1,x2) := Reln(x1,x2) & Less(x1,x2);
+  PRINT Reln(x1,x2);
+  PRINT "Number of cycles of length 2: ", #(Reln(x1,x2)), ENDL TO STDERR;
+
+// Cycles of length 3.
+  Reln(x1,x2,x3) :=   Rel(x1,x2)
+		           &  Rel(x2,x3)
+		           &  Rel(x3,x1);
+
+  // Eliminating edges of Cycles (not from inheritance relation).
+  Rel(x1,x2) :=   Rel(x1,x2)
+	        & (! EX(x3, Reln(x1,x2,x3)))
+                | INHERITANCE(x1,x2);
+
+  Reln(x1,x2,x3) := Reln(x1,x2,x3) & Less(x1,x2) & Less(x1,x3);
+  PRINT Reln(x1,x2,x3);
+  PRINT "Number of cycles of length 3: ", #(Reln(x1,x2,x3)), ENDL TO STDERR;
+
+             
+// Cycles of length 4.
+  Reln(x1,x2,x3,x4) :=   Rel(x1,x2)
+		              &  Rel(x2,x3)
+		              &  Rel(x3,x4)
+		              &  Rel(x4,x1);
+
+  // Eliminating edges of Cycles (not from inheritance relation).
+  Rel(x1,x2) :=   Rel(x1,x2)
+	        & (! EX(x3, EX(x4, Reln(x1,x2,x3,x4))))
+                | INHERITANCE(x1,x2);
+
+  Reln(x1,x2,x3,x4) := Reln(x1,x2,x3,x4) 
+		     & Less(x1,x2) & Less(x1,x3) & Less(x1,x4);
+  PRINT Reln(x1,x2,x3,x4);
+  PRINT "Number of cycles of length 4: ", #(Reln(x1,x2,x3,x4)), ENDL TO STDERR;
+
+             
+// Cycles of length 5.
+  Reln(x1,x2,x3,x4,x5) :=   Rel(x1,x2)
+		   	             &  Rel(x2,x3)
+		   	             &  Rel(x3,x4)
+		   	             &  Rel(x4,x5)
+		   	             &  Rel(x5,x1);
+
+  // Eliminating edges of Cycles (not from inheritance relation).
+  Rel(x1,x2) :=   Rel(x1,x2)
+	              & (! EX(x3, EX(x4, EX(x5, Reln(x1,x2,x3,x4,x5)))))
+                  | INHERITANCE(x1,x2);
+             
+  Reln(x1,x2,x3,x4,x5) := Reln(x1,x2,x3,x4,x5)
+		                & Less(x1,x2) & Less(x1,x3) 
+			            & Less(x1,x4) & Less(x1,x5);
+  PRINT Reln(x1,x2,x3,x4,x5);
+  PRINT "Number of cycles of length 5: ", #(Reln(x1,x2,x3,x4,x5)), ENDL TO STDERR;
+  

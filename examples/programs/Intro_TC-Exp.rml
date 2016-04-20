@@ -1,0 +1,7 @@
+// Start with 'crocopat Intro_TC-Exp.rml < Intro_R.rsf'
+Result(x,y) := R(x,y);
+PrevResult(x,y) := FALSE(x,y);
+WHILE (PrevResult(x,y) != Result(x,y)) {
+  PrevResult(x,y) := Result(x,y);
+  Result(x,z) := Result(x,z) | EX(y, Result(x,y) & Result(y,z));
+}

@@ -1,0 +1,3 @@
+PROCEDURE bar { 
+  PRINT "Procedure 'bar' called.", ENDL; 
+};

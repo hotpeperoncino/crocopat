@@ -1,0 +1,7 @@
+// Start with 'crocopat Intro_Cyclic.rml < Intro_R.rsf'
+SelfArcs(x,y) := TC(R(x,y)) & (x = y); 
+IF (SelfArcs(_,_)) {
+    PRINT "R is not acyclic", ENDL;
+} ELSE {
+    PRINT "R is acyclic", ENDL;
+}

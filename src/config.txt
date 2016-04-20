@@ -1,0 +1,8 @@
+GNU Make 4.0 このプログラムは x86_64-pc-linux-gnu 用にビルドされました Copyright (C) 1988-2013 Free Software Foundation, Inc. ライセンス GPLv3+: GNU GPL バージョン 3 以降 <http://gnu.org/licenses/gpl.html> これはフリーソフトウェアです: 自由に変更および配布できます. 法律の許す限り、　無保証　です.
+
+gcc (Ubuntu 5.1.1-4ubuntu12) 5.1.1 20150504 Copyright (C) 2015 Free Software Foundation, Inc. This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+flex 2.5.39
+
+bison (GNU Bison) 3.0.2 Robert Corbett と Richard Stallman によって書かれました Copyright (C) 2013 Free Software Foundation, Inc. This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. [参考訳 -- 法的効力は英文が適用されます] これはフリーソフトウェアです -- 複製についての条件はソースを見ましょう。 一切の保証はありません -- 商業性や目的適合性についての保証すらありません。
+

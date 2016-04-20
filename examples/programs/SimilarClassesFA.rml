@@ -1,0 +1,17 @@
+// Similar classes, i.e. classes call, contain, 
+//   and inherit from the same classes.
+
+IdCall(x,z) :=  
+      FA(y,  (CALL(x,y) -> CALL(z,y)) 
+           & (CALL(z,y) -> CALL(x,y)));
+
+IdCont(x,z) :=  
+      FA(y,  (CONTAINMENT(x,y) -> CONTAINMENT(z,y)) 
+           & (CONTAINMENT(z,y) -> CONTAINMENT(x,y)));
+
+IdInh(x,z) :=  
+      FA(y,  (INHERITANCE(x,y) -> INHERITANCE(z,y)) 
+           & (INHERITANCE(z,y) -> INHERITANCE(x,y)));
+
+Ident(x,z) := IdCall(x,z)&IdCont(x,z)&IdInh(x,z);
+PRINT Ident(x,z);

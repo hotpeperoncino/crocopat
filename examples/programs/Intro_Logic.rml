@@ -1,0 +1,61 @@
+// Start with 'crocopat -e Intro_Logic.rml'
+
+Male("John");
+Male("Joe");
+
+Female("Alice");
+Female("Jane");
+Female("Mary");
+PRINT ["Male"] Male(x), ["Female"] Female(x);
+
+ParentOf("John", "Alice");
+ParentOf("John", "Joe");
+ParentOf("Mary", "Alice");
+ParentOf("Mary", "Joe");
+ParentOf("Joe", "Jane");
+PRINT ["ParentOf"] ParentOf(x,y);
+
+JoesParent(x) := ParentOf(x, "Joe");
+PRINT ["JoesParent"] JoesParent(x);
+
+ChildOf(x,y) := ParentOf(y,x);
+PRINT ["ChildOf"] ChildOf(x,y);
+
+FatherOf("John", x) := ParentOf("John", x);
+FatherOf("Joe", x) := ParentOf("Joe", x);
+PRINT ["FatherOf"] FatherOf(x,y);
+
+FatherOf(x,y) := ParentOf(x,y) & Male(x);
+
+MotherOf(x,y) := ParentOf(x,y) & Female(x);
+PRINT ["MotherOf"] MotherOf(x,y);
+
+ParentOf(x,y) := MotherOf(x,y) | FatherOf(x,y);
+PRINT ["ParentOf"] ParentOf(x,y);
+
+Parent(x) := EX(y, ParentOf(x,y));
+PRINT ["Parent1"] Parent(x);
+
+Parent(x) := ParentOf(x,_);
+PRINT ["Parent2"] Parent(x);
+
+Childless(x) := !EX(y, ParentOf(x,y));
+PRINT ["ChildLess1"] Childless(x);
+
+Childless(x) := FA(y, !ParentOf(x,y));
+PRINT ["ChildLess2"] Childless(x);
+
+GrandparentOf(x,z) := EX(y, ParentOf(x,y) & ParentOf(y,z));
+PRINT ["GrandparentOf"] GrandparentOf(x,y);
+
+AncestorOf(x,z) := TC(ParentOf(x,z));
+PRINT ["AncestorOf"] AncestorOf(x,y);
+
+SiblingOf(x,y) := EX(z, ParentOf(x,z) & ParentOf(y,z)) & (x != y);
+PRINT ["SiblingOf"] SiblingOf(x,y);
+
+StartsWithJ(x) := @"^J"(x);
+PRINT ["StartsWithJ"] StartsWithJ(x);
+
+PRINT GrandparentOf(x,y) < AncestorOf(x,y);
+PRINT GrandparentOf(x,y) = AncestorOf(x,y);

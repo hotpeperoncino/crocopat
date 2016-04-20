@@ -1,0 +1,50 @@
+/* This RML program eliminates nodes and edges from the graph,
+ * such that the resulting graph is 1) connected and 2) irreflexive.
+*/
+
+// Replace 'CCG' in the next line with the name of your RSF relation.
+Edge(x,y) := CCG(x,y);
+
+// Assuming the graph relation is 'Edge'.
+
+// 1) Compute the set of connected vertices 'VertexCC'.
+
+  // Interpret the graph as undirected graph.
+  EdgeNew(u,v) := Edge(u,v) | Edge(v,u);
+
+  // Transitive closure.
+  // Note: The resulting graph is reflexive.
+  EdgeNew(u,v) := TC(EdgeNew(u,v));
+
+  // The set of all vertices.
+  Vertex(v) := EdgeNew(v,_);
+
+  // Select a vertex 'vertCC' from the largest connected component
+  // with 'vertCC_nr' elements.
+  vertCC    := ELEMENT(Vertex(v));
+  vertCC_nr := 0;
+  FOR vert IN Vertex(v) {
+    vert_nr := #( EdgeNew(vert,u) );
+    IF (vert_nr > vertCC_nr) {
+      vertCC    := vert;
+      vertCC_nr := vert_nr;
+    }
+  }
+
+  // The vertices in the largest connected component.
+  VertexCC(v) := EdgeNew(vertCC,v);
+
+// Statistics.
+  vert_nr := #( Vertex(v) );
+  PRINT "Largest connected component has ", vertCC_nr, " vertices.", ENDL,
+        "Removing ", vert_nr - vertCC_nr, 
+        " vertices out of ", vert_nr, ".", ENDL TO STDERR;
+
+// 2) Eliminate reflexive edges.
+
+  Edge(u,v) := Edge(u,v) & u!=v;
+
+
+// Output graph restricted to the largest connected component.
+
+  PRINT ["Edge"] Edge(u,v) & VertexCC(u) & VertexCC(v);

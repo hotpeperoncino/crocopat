@@ -1,0 +1,9 @@
+// Construct relation (Component, Composite, Leaf).
+
+CompPat(Component, Composite, Leaf) := 
+      INHERITANCE(Composite, Component)
+    & CONTAINMENT(Composite, Component)
+    & INHERITANCE(Leaf, Component)  
+    & ! CONTAINMENT(Leaf, Component);
+PRINT CompPat(Component, Composite, Leaf);
+PRINT "Number of composites: ", #(CompPat(Component,_,_)), ENDL TO STDERR;

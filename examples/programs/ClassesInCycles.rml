@@ -1,0 +1,6 @@
+// Classes in cycles of arbitrary length (existence).
+
+Use(x,y) := CALL(x,y) | CONTAINMENT(x,y) | INHERITANCE(x,y);
+InCycle(x) := EX(y, TC(Use(x,y)) & (x = y));
+PRINT InCycle(x);
+PRINT "Number of classes in cycles: ", #(InCycle(x)), ENDL TO STDERR;

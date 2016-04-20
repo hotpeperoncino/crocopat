@@ -1,0 +1,4 @@
+// Start with e.g. 'crocopat Intro_IO.rml Joe Mary < Intro_ParentOf.rsf'
+ChildOf(x,y) := ParentOf(y,x);
+PRINT ["Child"] ChildOf(x,$1) TO $1 + ".rsf";
+PRINT ["Child"] ChildOf(x,$2) TO $2 + ".rsf";

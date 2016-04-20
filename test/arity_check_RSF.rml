@@ -1,0 +1,9 @@
+// Espects relation R from RSF file.
+
+// Automatic adjustment (reduction) of arity.
+PRINT R(x);
+
+// Automatic adjustment (expansion) of arity.
+PRINT R(x,y,z);
+
+PRINT "Test passed. :-)", ENDL;

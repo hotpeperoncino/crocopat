@@ -1,0 +1,9 @@
+R("a","a");
+R("a","b");
+// Automatic adjustment (reduction) of arity.
+PRINT R(x);
+
+// Automatic adjustment (expansion) of arity.
+PRINT R(x,y,z);
+
+PRINT "Test passed. :-)", ENDL;

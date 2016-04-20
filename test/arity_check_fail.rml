@@ -1,0 +1,7 @@
+R("a","a");
+R("b","a");
+// Automatic adjustment (reduction) of arity should give error here.
+PRINT R(x);
+
+// This should not be printed.
+PRINT "Test that should fail has passed. :-)", ENDL;

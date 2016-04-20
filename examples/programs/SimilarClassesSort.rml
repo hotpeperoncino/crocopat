@@ -1,0 +1,15 @@
+// Similar classes, i.e. classes call, contain, 
+//   and inherit from the same classes.
+
+Ident(x,z) :=   FA(y, CALL(x,y) <-> CALL(z,y))
+              & FA(y, CONTAINMENT(x,y) <-> CONTAINMENT(z,y))
+              & FA(y, INHERITANCE(x,y) <-> INHERITANCE(z,y));
+
+// Eliminate reflexive pairs.
+Ident(x,z) := Ident(x,z) & !(x = z);
+
+// Eliminate z.
+Ident(x) := EX(z, Ident(x,z));
+
+PRINT Ident(x);
+PRINT #(Ident(x)), ENDL TO STDERR;

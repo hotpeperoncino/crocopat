@@ -1,0 +1,157 @@
+digraph BDD {
+size="7.5,10";
+
+{ rank=same;
+183 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x1_0"];
+}
+
+{ rank=same;
+133 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x3_0"];
+181 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x3_0"];
+}
+
+{ rank=same;
+100 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x5_0"];
+129 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x5_0"];
+180 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x5_0"];
+174 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x5_0"];
+}
+
+{ rank=same;
+74 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x7_0"];
+94 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x7_0"];
+128 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x7_0"];
+126 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x7_0"];
+179 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x7_0"];
+177 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x7_0"];
+173 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x7_0"];
+170 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x7_0"];
+}
+
+{ rank=same;
+22 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x2_0"];
+178 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x2_0"];
+176 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x2_0"];
+175 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x2_0"];
+172 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x2_0"];
+171 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x2_0"];
+169 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x2_0"];
+168 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x2_0"];
+}
+
+{ rank=same;
+23 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x4_0"];
+127 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x4_0"];
+125 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x4_0"];
+124 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x4_0"];
+}
+
+{ rank=same;
+29 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x6_0"];
+93 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x6_0"];
+}
+
+{ rank=same;
+30 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x8_0"];
+}
+
+
+{ rank=same;
+1 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,shape=box,label="1"];
+
+0 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,shape=box,label="0"];
+
+}
+
+
+183 -> 133 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+183 -> 181 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+133 -> 100 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+133 -> 129 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+181 -> 180 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+181 -> 174 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+100 -> 74 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+100 -> 94 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+129 -> 128 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+129 -> 126 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+180 -> 179 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+180 -> 177 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+174 -> 173 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+174 -> 170 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+74 -> 0 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+74 -> 30 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+94 -> 29 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+94 -> 93 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+128 -> 23 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+128 -> 127 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+126 -> 125 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+126 -> 124 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+179 -> 22 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+179 -> 178 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+177 -> 176 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+177 -> 175 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+173 -> 172 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+173 -> 171 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+170 -> 169 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+170 -> 168 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+22 -> 0 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+22 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+178 -> 30 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+178 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+176 -> 29 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+176 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+175 -> 93 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+175 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+172 -> 23 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+172 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+171 -> 127 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+171 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+169 -> 125 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+169 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+168 -> 124 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+168 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+23 -> 0 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+23 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+127 -> 30 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+127 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+125 -> 29 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+125 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+124 -> 93 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+124 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+29 -> 0 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+29 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+93 -> 30 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+93 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+30 -> 0 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+30 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+}

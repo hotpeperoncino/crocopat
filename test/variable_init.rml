@@ -1,0 +1,10 @@
+// Issue 4
+
+//A("");
+B("");
+
+// The following line fails in CrocoPat 2.1.4 (Issue 4):
+A(x) := A(x) | B(x);
+
+PRINT "Test passed. :-)", ENDL;
+

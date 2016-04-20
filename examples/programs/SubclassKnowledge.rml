@@ -1,0 +1,7 @@
+// Subclass knowledge.
+
+Know(super,sub) :=  
+      TC(CALL(super,sub) | CONTAINMENT(super,sub))
+    & TC(INHERITANCE(sub,super));
+PRINT Know(super,sub);
+PRINT "Number of subclass knowledge pairs: ", #(Know(super, sub)), ENDL TO STDERR;

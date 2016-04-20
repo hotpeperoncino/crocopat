@@ -1,0 +1,69 @@
+digraph BDD {
+size="7.5,10";
+
+{ rank=same;
+37 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x1_0"];
+}
+
+{ rank=same;
+36 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x2_0"];
+}
+
+{ rank=same;
+35 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x3_0"];
+}
+
+{ rank=same;
+34 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x4_0"];
+}
+
+{ rank=same;
+33 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x5_0"];
+}
+
+{ rank=same;
+32 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x6_0"];
+}
+
+{ rank=same;
+31 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x7_0"];
+}
+
+{ rank=same;
+30 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,label="x8_0"];
+}
+
+
+{ rank=same;
+1 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,shape=box,label="1"];
+
+0 [fontname="Helvetica",fontsize="16",height="0.3",width="0.5",color=black,style=unfilled,shape=box,label="0"];
+
+}
+
+
+37 -> 35 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+37 -> 36 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+36 -> 35 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+36 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+35 -> 33 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+35 -> 34 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+34 -> 33 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+34 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+33 -> 31 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+33 -> 32 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+32 -> 31 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+32 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+31 -> 0 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+31 -> 30 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+30 -> 0 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="0",style=dotted]
+30 -> 1 [arrowsize="1.0",fontname="Helvetica",fontsize="8",label="1",style=solid]
+
+}
