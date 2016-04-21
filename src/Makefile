@@ -21,7 +21,7 @@ CFLAGS:= $(DEB) $(PROF) $(OPT) $(MINGW) -I. -ansi #-Wall
 LFLAGS:= $(PROF) $(MINGW) -L. -lrelbdd
 
 BUILDTIME:= $(shell date -u +%Y-%m-%dT%H:%M:%S)
-REVISION:=  $(shell svnversion)
+REVISION:= "20160421"
 
 ifeq (darwin, $(findstring darwin,$(subst Darwin,darwin,$(shell uname))))
 	# mac
